@@ -1,7 +1,7 @@
 export {}
 
 // 従業員の職位
-type Grade = "junior" | "middle" | "senior";
+type Grade = "junior" | "middle" | "senior" | ;
 
 class Employee {
     constructor(
