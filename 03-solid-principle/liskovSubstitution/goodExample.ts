@@ -1,52 +1,49 @@
-export {}
+export {};
 
 interface Shape {
-    getArea(): number;
+  getArea(): number;
 }
 
 class Rectangle implements Shape {
-    private width = 0;
-    private height = 0;
+  private width = 0;
+  private height = 0;
 
-    setWidth(width: number) {
-        this.width = width;
-    }
+  setWidth(width: number) {
+    this.width = width;
+  }
 
-
-    setHeight(height: number) {
-        this.height = height;
-    }
-
-    getArea(): number {
-        return this.width * this.height;
-    }
+  setHeight(height: number) {
+    this.height = height;
+  }
+  getArea(): number {
+    return this.width * this.height;
+  }
 }
 
 class Square implements Shape {
-    private length = 0;
+  private length = 0;
 
-    setLength(length: number) {
-        this.length = length;
-    }
+  setLength(length: number) {
+    this.length = length;
+  }
 
-    getArea(): number {
-        return this.length * this.length;
-    }
+  getArea(): number {
+    return this.length * this.length;
+  }
 }
 
 function f(shape: Shape) {
-    console.log(shape.getArea());
+  console.log(shape.getArea());
 }
 
 function run() {
-    const r1 = new Rectangle();
-    r1.setWidth(3);
-    r1.setHeight(4);
-    f(r1);
-
-    const r2 = new Square();
-    r2.setLength(3);
-    f(r2);
+  const r1 = new Rectangle();
+  r1.setWidth(3);
+  r1.setHeight(4);
+  f(r1);
+  const s1 = new Square();
+  s1.setLength(5);
+  f(s1);
 }
 
 run();
