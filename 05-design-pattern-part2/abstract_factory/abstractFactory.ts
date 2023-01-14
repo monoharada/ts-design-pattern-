@@ -1,65 +1,65 @@
-export {}
+export {};
 
 interface Button {
-    press();
+  press();
 }
 
 interface Checkbox {
-    switch();
+  switch();
 }
 
 interface GUIFactory {
-    createButton(): Button;
-    createCheckbox(): Checkbox;
+  createButton(): Button;
+  createCheckbox(): Checkbox;
 }
 
 class WindowsButton implements Button {
-    press() {
-        console.log("Windows用のボタンが押されました");
-    }
+  press() {
+    console.log('press from Windows button');
+  }
 }
 
 class WindowsCheckbox implements Checkbox {
-    switch() {
-        console.log("Windowsのチェックボックスが切り替えられました");
-    }
+  switch() {
+    console.log('switch from Windows checkbox');
+  }
 }
 
 class WindowsGUIFactory implements GUIFactory {
-    createButton(): Button {
-        return new WindowsButton();
-    }
-    createCheckbox(): Checkbox {
-        return new WindowsCheckbox();
-    }
+  createButton() {
+    return new WindowsButton();
+  }
+  createCheckbox(): Checkbox {
+    return new WindowsCheckbox();
+  }
 }
 
 class MacButton implements Button {
-    press() {
-        console.log("Mac用のボタンが押されました");
-    }
+  press() {
+    console.log('press from Mac button');
+  }
 }
 
 class MacCheckbox implements Checkbox {
-    switch() {
-        console.log("Macのチェックボックスが切り替えられました");
-    }
+  switch() {
+    console.log('switch from Mac checkbox');
+  }
 }
 
 class MacGUIFactory implements GUIFactory {
-    createButton(): Button {
-        return new MacButton();
-    }
-    createCheckbox(): Checkbox {
-        return new MacCheckbox();
-    }
+  createButton() {
+    return new MacButton();
+  }
+  createCheckbox(): Checkbox {
+    return new MacCheckbox();
+  }
 }
 
 function run(factory: GUIFactory) {
-    const button = factory.createButton();
-    const checkbox = factory.createCheckbox();
-    button.press();
-    checkbox.switch();
+  const button = factory.createButton();
+  const checkbox = factory.createCheckbox();
+  button.press();
+  checkbox.switch();
 }
 
 run(new WindowsGUIFactory());
